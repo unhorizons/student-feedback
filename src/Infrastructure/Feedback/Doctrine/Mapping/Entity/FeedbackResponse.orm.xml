@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="https://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="https://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity
+            name="Domain\Feedback\Entity\FeedbackResponse"
+            repository-class="Infrastructure\Feedback\Doctrine\Repository\FeedbackResponseRepository"
+            table="feedback_response"
+    >
+        <id name="id" type="integer" column="id">
+            <generator strategy="IDENTITY"/>
+        </id>
+
+        <field name="content" type="text" nullable="false" />
+
+        <!-- relations -->
+        <many-to-one field="owner" target-entity="Domain\Authentication\Entity\User" >
+            <join-column on-delete="CASCADE" nullable="false" />
+        </many-to-one>
+        <many-to-one field="feedback" target-entity="Domain\Feedback\Entity\Feedback" inversed-by="responses">
+            <join-column on-delete="CASCADE" nullable="false" />
+            <cascade>
+                <cascade-remove />
+            </cascade>
+        </many-to-one>
+
+        <!-- Timestamp -->
+        <field name="created_at" type="datetime_immutable"/>
+        <field name="updated_at" type="datetime_immutable" nullable="true"/>
+    </entity>
+</doctrine-mapping>

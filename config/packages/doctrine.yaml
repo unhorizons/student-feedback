@@ -1,0 +1,82 @@
+doctrine:
+    dbal:
+        url: '%env(resolve:DATABASE_URL)%'
+        mapping_types:
+            enum: string
+    orm:
+        auto_generate_proxy_classes: true
+        naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+        auto_mapping: true
+        mappings:
+            # authentication
+            Domain\Authentication\Entity:
+                type: xml
+                dir: '%kernel.project_dir%/src/Infrastructure/Authentication/Doctrine/Mapping/Entity'
+                prefix: 'Domain\Authentication\Entity'
+                is_bundle: false
+            Domain\Authentication\ValueObject:
+                type: xml
+                dir: '%kernel.project_dir%/src/Infrastructure/Authentication/Doctrine/Mapping/ValueObject'
+                prefix: 'Domain\Authentication\ValueObject'
+                is_bundle: false
+
+            # feedback
+            Domain\Feedback\Entity:
+                type: xml
+                dir: '%kernel.project_dir%/src/Infrastructure/Feedback/Doctrine/Mapping/Entity'
+                prefix: 'Domain\Feedback\Entity'
+                is_bundle: false
+            Domain\Feedback\ValueObject:
+                type: xml
+                dir: '%kernel.project_dir%/src/Infrastructure/Feedback/Doctrine/Mapping/ValueObject'
+                prefix: 'Domain\Feedback\ValueObject'
+                is_bundle: false
+
+            # shared
+            Domain\Shared\Entity:
+                type: xml
+                dir: '%kernel.project_dir%/src/Infrastructure/Shared/Doctrine/Mapping/Entity'
+                prefix: 'Domain\Shared\Entity'
+                is_bundle: false
+            Domain\Shared\ValueObject:
+                type: xml
+                dir: '%kernel.project_dir%/src/Infrastructure/Shared/Doctrine/Mapping/ValueObject'
+                prefix: 'Domain\Shared\ValueObject'
+                is_bundle: false
+
+        dql:
+            numeric_functions:
+                RANDOM: DoctrineExtensions\Query\Sqlite\Random
+                ROUND: DoctrineExtensions\Query\Mysql\Round
+            datetime_functions:
+                EXTRACT: DoctrineExtensions\Query\Mysql\Extract
+                TO_CHAR: DoctrineExtensions\Query\Mysql\DateFormat
+                NOW: DoctrineExtensions\Query\Mysql\Now
+            string_functions:
+                LPAD: DoctrineExtensions\Query\Mysql\Lpad
+                CAST: DoctrineExtensions\Query\Mysql\Cast
+
+when@test:
+    doctrine:
+        dbal:
+            # "TEST_TOKEN" is typically set by ParaTest
+            dbname_suffix: '_test%env(default::TEST_TOKEN)%'
+
+when@prod:
+    doctrine:
+        orm:
+            auto_generate_proxy_classes: false
+            query_cache_driver:
+                type: pool
+                pool: doctrine.system_cache_pool
+            result_cache_driver:
+                type: pool
+                pool: doctrine.result_cache_pool
+
+    framework:
+        cache:
+            pools:
+                doctrine.result_cache_pool:
+                    adapter: cache.app
+                doctrine.system_cache_pool:
+                    adapter: cache.system

@@ -1,0 +1,29 @@
+{% extends '@app/shared/layout/survey.html.twig' %}
+{% block title 'Nouveau feedback' %}
+{% form_theme form '@admin/shared/layout/form_theme.html.twig' %}
+
+{% block form %}
+    {% embed "@admin/shared/component/card/_simple.html.twig" %}
+        {% block simple_card_body %}
+            <turbo-frame id="form-modal-frame">
+                {{ form_start(form, {attr: {'data-turbo-frame': _turbo_frame_target ?? '_top', 'novalidate': 'novalidate'}}) }}
+                {% if _turbo_frame_target %}
+                    {{ form_errors(form) }}
+                {% endif %}
+
+                {{ form_rest(form) }}
+                <div class="btn-group">
+                    <button class="mt-3 btn btn-primary">
+                        {{ 'save-fill' | icon }}
+                        <span>{{ 'global.submit' | trans([], 'messages') }}</span>
+                    </button>
+                    <a href="{{ path('feedback_index') }}" class="mt-3 btn btn-primary">
+                        {{ 'comments' | icon }}
+                        <span>Mes feedbacks</span>
+                    </a>
+                </div>
+                {{ form_end(form) }}
+            </turbo-frame>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

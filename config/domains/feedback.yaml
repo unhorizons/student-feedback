@@ -1,0 +1,10 @@
+parameters:
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    # Doctrine Repositories
+    Domain\Feedback\Repository\FeedbackRepositoryInterface: '@Infrastructure\Feedback\Doctrine\Repository\FeedbackRepository'
+    Domain\Feedback\Repository\FeedbackResponseRepositoryInterface: '@Interface\Feedback\Doctrine\Repository\FeedbackResponseRepository'

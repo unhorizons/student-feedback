@@ -1,0 +1,65 @@
+{% extends '@admin/shared/layout/base.html.twig' %}
+{% block title 'Détail du feedback' %}
+
+{% block header %}
+    {% embed '@admin/shared/component/_header.html.twig' %}
+        {% block header_title 'Feedback' %}
+        {% block header_description %}
+            <ul class="list-inline">
+                <li>ID : <span class="text-base">{{ data.id }}</span></li>
+                <li>Date : <span class="text-base">{{ data.createdAt | date('d M Y') }}</span></li>
+            </ul>
+        {% endblock %}
+        {% block header_action_list %}
+            <li class="btn-group">
+                <a href="{{ path('administration_feedback_index') }}" class="btn btn-white btn-dim btn-outline-light">
+                    {{ 'arrow-long-left' | icon }}
+                    <span>Tous les feedbacks</span>
+                </a>
+            </li>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}
+
+{% block content %}
+    {% embed '@admin/shared/component/card/_detail.html.twig' %}
+        {% import '@admin/shared/component/_macros.html.twig' as _ %}
+        {% block detail_card_body %}
+            <div class="nk-block">
+                <div class="nk-block-head">
+                    <h5 class="title">Feedback donné le {{ data.createdAt | date('d M Y') }}</h5>
+                    <ul class="list-inline mb-3">
+                        {% if data.isAnonymous %}
+                            <li><span class="badge bg-secondary">feedback anonyme</span></li>
+                        {% endif %}
+                        {% if data.isRead %}
+                            <li><span class="badge bg-primary">feedback lu</span></li>
+                        {% endif %}
+                        <li><span class="badge bg-secondary">{{ data.responseCount}} réponse</span></li>
+                    </ul>
+                    <p>{{ data.content }}</p>
+                </div>
+            </div>
+
+
+            <div class="nk-divider divider md"></div>
+            <div class="nk-block">
+                <div class="nk-block-head nk-block-head-sm nk-block-between">
+                    <h5 class="title">Réponses</h5>
+                    <button {{ stimulus_action('modal-form', 'open') }} class="btn btn-white btn-dim btn-outline-light">
+                        {{ 'plus' | icon }}
+                        <span>répondre</span>
+                    </button>
+                    {% include '@admin/shared/component/_modal.html.twig' with {_action: 'Répondre', _path: path('administration_feedback_feedback_response_new', {id: data.id})} %}
+                </div>
+                {% if data.responses | length > 0 %}
+                    <div class="bq-note">
+                        {% for response in data.responses %}
+                            {% include '@app/shared/_response.html.twig' with {data: response, feedback: data} %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

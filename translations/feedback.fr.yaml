@@ -1,0 +1,15 @@
+# global
+feedback: Feedback
+feedback_response: Réponse
+
+# forms
+feedback.forms.labels.content: Feedback
+feedback.forms.labels.promotion: Promotion
+feedback.forms.labels.response: Réponse
+feedback.forms.labels.is_anonymous: feedback anonyme
+
+# exceptions
+feedback.exceptions.monthly_feedback_limit_reached: Vous avez atteint la limite de feedback par mois que vous pouvez faire
+
+# mails
+feedback.mails.subjects.feedback_responded: Votre dernier feedback a reçu une réponse de l'administration

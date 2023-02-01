@@ -1,0 +1,12 @@
+framework:
+    validation:
+        email_validation_mode: html5
+        mapping:
+            paths:
+                - "%kernel.project_dir%/src/Infrastructure/Shared/Symfony/Validation/Mapping"
+                - "%kernel.project_dir%/src/Infrastructure/Feedback/Symfony/Validation/Mapping"
+                - "%kernel.project_dir%/src/Infrastructure/Authentication/Symfony/Validation/Mapping"
+when@test:
+    framework:
+        validation:
+            not_compromised_password: false

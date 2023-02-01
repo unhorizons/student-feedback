@@ -1,0 +1,15 @@
+parameters:
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    # Doctrine Repositories
+    Domain\Authentication\Repository\UserRepositoryInterface: '@Infrastructure\Authentication\Doctrine\Repository\UserRepository'
+
+    Infrastructure\Authentication\Doctrine\EventListener\GenerateBackupCodeListener:
+        tags:
+            - name: doctrine.orm.entity_listener
+              event: postUpdate
+              entity: Domain\Authentication\Entity\User

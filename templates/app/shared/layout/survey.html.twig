@@ -1,0 +1,53 @@
+{% apply spaceless %}
+    <!DOCTYPE html>
+    <html lang="{{ app.request.locale }}" class="js">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Devscast">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="shortcut icon" href="{{ asset('/images/logo_icon.png') }}">
+        <title>{% block title %}Connexion{% endblock %} | UNH Feedbacks</title>
+        {{ encore_entry_link_tags('admin') }}
+
+        <script type="application/javascript" src="{{ asset('/static/bundle.js') }}"></script>
+        <script type="application/javascript" src="{{ asset('/static/scripts.js') }}"></script>
+        {{ encore_entry_script_tags('admin') }}
+    </head>
+    {% include '@admin/shared/component/_flash.html.twig' %}
+
+    <body class="nk-body bg-white npc-default pg-survey no-touch nk-nio-theme light-mode as-mobile">
+    <div class="nk-app-root">
+        <div class="nk-main ">
+            <div class="nk-wrap nk-wrap-nosidebar">
+                <div class="nk-content ">
+                    <div class="nk-split nk-split-page nk-split-lg">
+                        <div class="nk-split-content bg-dark is-dark p-5 d-flex justify-between flex-column text-center">
+                            <div class="logo-link nk-sidebar-logo">
+                                <img class="logo-light logo-img" src="{{ asset('/images/logo_icon.png') }}" alt="logo">
+                            </div>
+
+                            <div class="text-block wide-xs mx-auto">
+                                <h3 class="text-white">UNH Feedbacks</h3>
+                                <p>
+                                    Cette application permet aux étudiants de donner leur avis sur l'organisation de manière générale
+                                    de l'université nouveaux horizons, les étudiants peuvent écrire des commentaires sur les différents aspects de l'organisation
+                                    en 300 caractères.
+                                </p>
+                                <img class="nk-survey-gfx mt-5" src="{{ asset('/images/job-survey.svg') }}" alt="illustration">
+                            </div>
+                            <p>© {{ 'now' | date('Y') }} Club d'informatique UNH.</p>
+                        </div>
+
+                        <div class="nk-split-content nk-split-stretch bg-white p-5 d-flex justify-center align-center flex-column">
+                            <div class="wide-xs-fix">
+                                {% block form %}{% endblock %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
+{% endapply %}

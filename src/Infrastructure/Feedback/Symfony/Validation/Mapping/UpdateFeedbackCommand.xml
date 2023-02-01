@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<constraint-mapping xmlns="http://symfony.com/schema/dic/constraint-mapping"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping
+        https://symfony.com/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd">
+
+    <class name="Application\Feedback\Command\UpdateFeedbackCommand">
+        <property name="content">
+            <constraint name="NotBlank"/>
+            <constraint name="Length">
+                <option name="min">10</option>
+                <option name="max">350</option>
+                <option name="minMessage">
+                    votre avis dois avoir au moins {{ limit }} caractères
+                </option>
+                <option name="maxMessage">
+                    Désolé vous ne pouvez pas aller au-delà de {{ limit }} caractères
+                </option>
+            </constraint>
+        </property>
+    </class>
+</constraint-mapping>

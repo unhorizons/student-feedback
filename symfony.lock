@@ -1,0 +1,686 @@
+{
+    "dama/doctrine-test-bundle": {
+        "version": "6.7",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "4.0",
+            "ref": "56eaa387b5e48ebcc7c95a893b47dfa1ad51449c"
+        },
+        "files": [
+            "config/packages/test/dama_doctrine_test_bundle.yaml"
+        ]
+    },
+    "devscast/ddd-bundle": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/devscast/symfony-repices",
+            "branch": "main",
+            "version": "1.0",
+            "ref": "cf73442188cb86460861ad313101f961bffc546d"
+        },
+        "files": [
+            "config/domains/.gitignore",
+            "config/packages/dev/maker.yaml",
+            "config/packages/vich_uploader.yaml",
+            "src/Application/Shared/Command/AbstractCommand.php",
+            "src/Application/Shared/Handler/.gitignore",
+            "src/Application/Shared/Mapper.php",
+            "src/Domain/Shared/Entity/AbstractEntity.php",
+            "src/Domain/Shared/Entity/HasIdentityInterface.php",
+            "src/Domain/Shared/Entity/IdentityTrait.php",
+            "src/Domain/Shared/Entity/ThumbnailTrait.php",
+            "src/Domain/Shared/Entity/TimestampTrait.php",
+            "src/Domain/Shared/Entity/UuidTrait.php",
+            "src/Domain/Shared/Exception/SafeMessageException.php",
+            "src/Domain/Shared/Repository/CleanableRepositoryInterface.php",
+            "src/Domain/Shared/Repository/DataRepositoryInterface.php",
+            "src/Domain/Shared/ValueObject/EmbeddedFile.php",
+            "src/Infrastructure/Shared/Doctrine/Mapping/Entity/.gitignore",
+            "src/Infrastructure/Shared/Doctrine/Mapping/ValueObject/EmbeddedFile.orm.xml",
+            "src/Infrastructure/Shared/Doctrine/Repository/AbstractRepository.php",
+            "src/Infrastructure/Shared/Doctrine/Repository/NativeQueryTrait.php",
+            "src/Infrastructure/Shared/Doctrine/Subscriber/OwnerSubscriber.php",
+            "src/Infrastructure/Shared/Doctrine/Subscriber/TimestampSubscriber.php",
+            "src/Infrastructure/Shared/Image/ImageResizerController.php",
+            "src/Infrastructure/Shared/Image/ImageResizerExtension.php",
+            "src/Infrastructure/Shared/Image/ImageResizerResponseFactory.php",
+            "src/Infrastructure/Shared/Image/ImageResizerUrlGenerator.php",
+            "src/Infrastructure/Shared/Symfony/Controller/AbstractController.php",
+            "src/Infrastructure/Shared/Symfony/Controller/AbstractCrudController.php",
+            "src/Infrastructure/Shared/Symfony/Controller/DeleteCsrfTrait.php",
+            "src/Infrastructure/Shared/Symfony/Controller/FlashMessageTrait.php",
+            "src/Infrastructure/Shared/Symfony/Controller/PaginationAssertionTrait.php",
+            "src/Infrastructure/Shared/Symfony/Form/AbstractForm.php",
+            "src/Infrastructure/Shared/Symfony/Form/Type/AutoGrowTextareaType.php",
+            "src/Infrastructure/Shared/Symfony/Form/Type/DatePickerType.php",
+            "src/Infrastructure/Shared/Symfony/Form/Type/EditorType.php",
+            "src/Infrastructure/Shared/Symfony/Mailer/Mailer.php",
+            "src/Infrastructure/Shared/Symfony/Messenger/DispatchTrait.php",
+            "src/Infrastructure/Shared/Symfony/Normalizer/AbstractNormalizer.php",
+            "src/Infrastructure/Shared/Uploader/Mapping/.gitignore",
+            "src/Infrastructure/Shared/Validation/Mapping/.gitignore",
+            "tools/config/nginx.conf",
+            "tools/docker/node/Dockerfile",
+            "tools/docker/php/Dockerfile",
+            "tools/docker/php/prod.ini",
+            "public/.htaccess",
+            "public/admin/assets/bundle.js",
+            "public/admin/assets/scripts.js",
+            "public/manifest.json",
+            "public/robots.txt",
+            ".github/FUNDING.yml",
+            ".github/ISSUE_TEMPLATE/bug_report.md",
+            ".github/ISSUE_TEMPLATE/custom.md",
+            ".github/ISSUE_TEMPLATE/feature_request.md",
+            ".github/workflows/lint.yaml",
+            ".github/workflows/test.yaml",
+            "README.md",
+            "LICENSE.md",
+            "CONTRIBUTING.md",
+            "ecs.php",
+            "phpcs.xml.dist",
+            "phpstan.neon",
+            "psalm.xml",
+            "rector.php",
+            "Makefile",
+            "docker-compose.yaml",
+            ".gitattributes",
+            ".editorconfig"
+        ]
+    },
+    "doctrine/annotations": {
+        "version": "1.14",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "1.10",
+            "ref": "64d8583af5ea57b7afa4aba4b159907f3a148b05"
+        }
+    },
+    "doctrine/doctrine-bundle": {
+        "version": "2.8",
+        "recipe": {
+            "repo": "github.com/devscast/symfony-repices",
+            "branch": "main",
+            "version": "2.4",
+            "ref": "fbae213189ff6b705f668543710259161d6ae331"
+        },
+        "files": [
+            "config/packages/doctrine.yaml",
+            "src/Domain/Shared/Entity/.gitignore",
+            "src/Infrastructure/Shared/Doctrine/Mapping/Entity/.gitignore",
+            "src/Infrastructure/Shared/Doctrine/Mapping/ValueObject/.gitignore",
+            "src/Infrastructure/Shared/Doctrine/Repository/.gitignore"
+        ]
+    },
+    "doctrine/doctrine-fixtures-bundle": {
+        "version": "3.4",
+        "recipe": {
+            "repo": "github.com/devscast/symfony-repices",
+            "branch": "main",
+            "version": "3.0",
+            "ref": "23fd6c7776d2f25757706cb5a661bed6f22baf1f"
+        },
+        "files": [
+            "fixtures/AppFixtures.php",
+            "fixtures/data/fixtures.yaml"
+        ]
+    },
+    "doctrine/doctrine-migrations-bundle": {
+        "version": "3.2",
+        "recipe": {
+            "repo": "github.com/devscast/symfony-repices",
+            "branch": "main",
+            "version": "3.1",
+            "ref": "fe90f1d2753d2882529d272a7f78123eaf8e6688"
+        },
+        "files": [
+            "config/doctrine_migrations.yaml",
+            "migrations/.gitignore"
+        ]
+    },
+    "endroid/qr-code-bundle": {
+        "version": "4.2.0"
+    },
+    "hautelook/alice-bundle": {
+        "version": "2.11",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "2.2",
+            "ref": "c84e4f2b9d7f436d7d52e8369230b393367607ec"
+        },
+        "files": [
+            "config/packages/hautelook_alice.yaml",
+            "fixtures/.gitignore"
+        ]
+    },
+    "knplabs/knp-paginator-bundle": {
+        "version": "v5.9.0"
+    },
+    "knpuniversity/oauth2-client-bundle": {
+        "version": "2.11",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "1.20",
+            "ref": "1ff300d8c030f55c99219cc55050b97a695af3f6"
+        },
+        "files": [
+            "config/packages/knpu_oauth2_client.yaml"
+        ]
+    },
+    "nelmio/alice": {
+        "version": "3.12",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "3.3",
+            "ref": "42b52d2065dc3fde27912d502c18ca1926e35ae2"
+        },
+        "files": [
+            "config/packages/nelmio_alice.yaml"
+        ]
+    },
+    "phpunit/phpunit": {
+        "version": "9.5",
+        "recipe": {
+            "repo": "github.com/devscast/symfony-repices",
+            "branch": "main",
+            "version": "9.3",
+            "ref": "fd15a79699d7b34082a353013531d227bbf0a91d"
+        },
+        "files": [
+            ".env.test",
+            "phpunit.xml.dist",
+            "tests/Application/.gitignore",
+            "tests/Domain/.gitignore",
+            "tests/EventSubscriberTest.php",
+            "tests/FixturesTrait.php",
+            "tests/Infrastructure/.gitignore",
+            "tests/KernelTestCase.php",
+            "tests/PathHelper.php",
+            "tests/RepositoryTestCase.php",
+            "tests/ValidatorTestCase.php",
+            "tests/WebTestCase.php",
+            "tests/bootstrap.php",
+            "tests/fixtures/.gitignore",
+            "tests/object-manager.php"
+        ]
+    },
+    "scheb/2fa-bundle": {
+        "version": "6.5",
+        "recipe": {
+            "repo": "github.com/devscast/symfony-repices",
+            "branch": "main",
+            "version": "6.0",
+            "ref": "d0809bf5e83d3f1b48042e5d07e499d2e4964204"
+        },
+        "files": [
+            "config/domains/authentication.yaml",
+            "config/packages/rate_limiter.yaml",
+            "config/packages/scheb_2fa.yaml",
+            "config/routes/scheb_2fa.yaml",
+            "src/Application/Authentication/Command/ExportBackupCodeCommand.php",
+            "src/Application/Authentication/Command/GenerateBackupCodeCommand.php",
+            "src/Application/Authentication/Command/GenerateGoogleAuthenticatorSecretCommand.php",
+            "src/Application/Authentication/Command/ResendTwoFactorCodeCommand.php",
+            "src/Application/Authentication/Command/ToggleTwoFactorCommand.php",
+            "src/Application/Authentication/Handler/ExportBackupCodeHandler.php",
+            "src/Application/Authentication/Handler/GenerateBackupCodeHandler.php",
+            "src/Application/Authentication/Handler/GenerateGoogleAuthenticatorSecretHandler.php",
+            "src/Application/Authentication/Handler/ResendTwoFactorCodeHandler.php",
+            "src/Application/Authentication/Handler/ToggleTwoFactorHandler.php",
+            "src/Domain/Authentication/Entity/TwoFactorTrait.php",
+            "src/Domain/Authentication/Repository/UserRepositoryInterface.php",
+            "src/Infrastructure/Authentication/Doctrine/EventListener/GenerateBackupCodeListener.php",
+            "src/Infrastructure/Authentication/Symfony/Controller/LoginTwoFactorController.php",
+            "src/Infrastructure/Authentication/Symfony/Controller/Setting/BackupCodeController.php",
+            "src/Infrastructure/Authentication/Symfony/Controller/Setting/TwoFactorController.php",
+            "src/Infrastructure/Authentication/Symfony/Security/TwoFactorCondition.php"
+        ]
+    },
+    "sensio/framework-extra-bundle": {
+        "version": "6.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "5.2",
+            "ref": "fb7e19da7f013d0d422fa9bce16f5c510e27609b"
+        },
+        "files": [
+            "config/packages/sensio_framework_extra.yaml"
+        ]
+    },
+    "squizlabs/php_codesniffer": {
+        "version": "3.7",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "3.6",
+            "ref": "1019e5c08d4821cb9b77f4891f8e9c31ff20ac6f"
+        },
+        "files": [
+            "phpcs.xml.dist"
+        ]
+    },
+    "symfony/console": {
+        "version": "6.2",
+        "recipe": {
+            "repo": "github.com/devscast/symfony-repices",
+            "branch": "main",
+            "version": "5.3",
+            "ref": "acac844405ceaa75408834c4695ad12a4cfccada"
+        },
+        "files": [
+            "bin/console"
+        ]
+    },
+    "symfony/debug-bundle": {
+        "version": "6.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "5.3",
+            "ref": "5aa8aa48234c8eb6dbdd7b3cd5d791485d2cec4b"
+        },
+        "files": [
+            "config/packages/debug.yaml"
+        ]
+    },
+    "symfony/flex": {
+        "version": "2.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "1.0",
+            "ref": "146251ae39e06a95be0fe3d13c807bcf3938b172"
+        },
+        "files": [
+            ".env"
+        ]
+    },
+    "symfony/framework-bundle": {
+        "version": "6.2",
+        "recipe": {
+            "repo": "github.com/devscast/symfony-repices",
+            "branch": "main",
+            "version": "6.2",
+            "ref": "12de169f28940066ae11512f0b8c5cd2bba7d1f6"
+        },
+        "files": [
+            "config/packages/cache.yaml",
+            "config/packages/framework.yaml",
+            "config/preload.php",
+            "config/routes/framework.yaml",
+            "config/services.yaml",
+            "public/index.php",
+            "src/Infrastructure/Shared/Symfony/Controller/.gitignore",
+            "src/Infrastructure/Shared/Symfony/Kernel.php"
+        ]
+    },
+    "symfony/lock": {
+        "version": "6.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "5.2",
+            "ref": "8e937ff2b4735d110af1770f242c1107fdab4c8e"
+        },
+        "files": [
+            "config/packages/lock.yaml"
+        ]
+    },
+    "symfony/mailer": {
+        "version": "6.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "4.3",
+            "ref": "2bf89438209656b85b9a49238c4467bff1b1f939"
+        },
+        "files": [
+            "config/packages/mailer.yaml"
+        ]
+    },
+    "symfony/maker-bundle": {
+        "version": "1.48",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "1.0",
+            "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
+        }
+    },
+    "symfony/messenger": {
+        "version": "6.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "6.0",
+            "ref": "2523f7d31488903e247a522e760dc279be7f7aaf"
+        },
+        "files": [
+            "config/packages/messenger.yaml"
+        ]
+    },
+    "symfony/monolog-bundle": {
+        "version": "3.8",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "3.7",
+            "ref": "213676c4ec929f046dfde5ea8e97625b81bc0578"
+        },
+        "files": [
+            "config/packages/monolog.yaml"
+        ]
+    },
+    "symfony/notifier": {
+        "version": "6.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "5.0",
+            "ref": "c31585e252b32fe0e1f30b1f256af553f4a06eb9"
+        },
+        "files": [
+            "config/packages/notifier.yaml"
+        ]
+    },
+    "symfony/panther": {
+        "version": "2.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "1.0",
+            "ref": "877d853a05c6713665a2f4b954734592680abff6"
+        }
+    },
+    "symfony/phpunit-bridge": {
+        "version": "6.2",
+        "recipe": {
+            "repo": "github.com/devscast/symfony-repices",
+            "branch": "main",
+            "version": "5.3",
+            "ref": "c22e420dbe3364cf1c5c984e57a3d4d76a276aa2"
+        },
+        "files": [
+            ".env.test",
+            "bin/phpunit",
+            "phpunit.xml.dist",
+            "tests/Application/.gitignore",
+            "tests/Domain/.gitignore",
+            "tests/EventSubscriberTest.php",
+            "tests/FixturesTrait.php",
+            "tests/Infrastructure/.gitignore",
+            "tests/KernelTestCase.php",
+            "tests/PathHelper.php",
+            "tests/RepositoryTestCase.php",
+            "tests/ValidatorTestCase.php",
+            "tests/WebTestCase.php",
+            "tests/bootstrap.php",
+            "tests/fixtures/.gitignore",
+            "tests/object-manager.php"
+        ]
+    },
+    "symfony/routing": {
+        "version": "6.2",
+        "recipe": {
+            "repo": "github.com/devscast/symfony-repices",
+            "branch": "main",
+            "version": "6.2",
+            "ref": "08903f812975f22439f50f06f727dea27fa542a2"
+        },
+        "files": [
+            "config/packages/routing.yaml",
+            "config/routes.yaml"
+        ]
+    },
+    "symfony/security-bundle": {
+        "version": "6.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "6.0",
+            "ref": "8a5b112826f7d3d5b07027f93786ae11a1c7de48"
+        },
+        "files": [
+            "config/packages/security.yaml"
+        ]
+    },
+    "symfony/translation": {
+        "version": "6.2",
+        "recipe": {
+            "repo": "github.com/devscast/symfony-repices",
+            "branch": "main",
+            "version": "5.3",
+            "ref": "2a919526e2597903cf9cedfe9ce50ad687d82426"
+        },
+        "files": [
+            "config/packages/translation.yaml",
+            "translations/messages.fr.yaml"
+        ]
+    },
+    "symfony/twig-bundle": {
+        "version": "6.2",
+        "recipe": {
+            "repo": "github.com/devscast/symfony-repices",
+            "branch": "main",
+            "version": "5.4",
+            "ref": "3ac30355008a2256b1e1330b97eba24fc09f3f4a"
+        },
+        "files": [
+            "config/packages/twig.yaml",
+            "templates/admin/domain/.gitignore",
+            "templates/admin/index.html.twig",
+            "templates/admin/shared/component/_flash.html.twig",
+            "templates/admin/shared/component/_footer.html.twig",
+            "templates/admin/shared/component/_form.html.twig",
+            "templates/admin/shared/component/_header.html.twig",
+            "templates/admin/shared/component/_macros.html.twig",
+            "templates/admin/shared/component/_modal.html.twig",
+            "templates/admin/shared/component/_navbar.html.twig",
+            "templates/admin/shared/component/_sidebar.html.twig",
+            "templates/admin/shared/component/card/_detail.html.twig",
+            "templates/admin/shared/component/card/_empty_state.html.twig",
+            "templates/admin/shared/component/card/_list.html.twig",
+            "templates/admin/shared/component/card/_simple.html.twig",
+            "templates/admin/shared/component/card/_stats.html.twig",
+            "templates/admin/shared/layout/base.html.twig",
+            "templates/admin/shared/layout/error.html.twig",
+            "templates/admin/shared/layout/form.html.twig",
+            "templates/admin/shared/layout/form_theme.html.twig",
+            "templates/admin/shared/layout/pagination/filter.html.twig",
+            "templates/admin/shared/layout/pagination/pagination.html.twig",
+            "templates/admin/shared/layout/pagination/sorting.html.twig",
+            "templates/admin/shared/offline.html.twig",
+            "templates/app/domain/.gitignore",
+            "templates/app/shared/.gitignore",
+            "src/Infrastructure/Shared/Symfony/Twig/Badge.php",
+            "src/Infrastructure/Shared/Symfony/Twig/BadgeExtension.php",
+            "src/Infrastructure/Shared/Symfony/Twig/Icon.php",
+            "src/Infrastructure/Shared/Symfony/Twig/IconExtension.php",
+            "src/Infrastructure/Shared/Symfony/Twig/MailerExtension.php",
+            "src/Infrastructure/Shared/Symfony/Twig/Sidebar/AbstractSidebar.php",
+            "src/Infrastructure/Shared/Symfony/Twig/Sidebar/SidebarBuilder.php",
+            "src/Infrastructure/Shared/Symfony/Twig/Sidebar/SidebarBuilderInterface.php",
+            "src/Infrastructure/Shared/Symfony/Twig/Sidebar/SidebarCollection.php",
+            "src/Infrastructure/Shared/Symfony/Twig/Sidebar/SidebarExtension.php",
+            "src/Infrastructure/Shared/Symfony/Twig/Sidebar/Type/SidebarGroup.php",
+            "src/Infrastructure/Shared/Symfony/Twig/Sidebar/Type/SidebarHeader.php",
+            "src/Infrastructure/Shared/Symfony/Twig/Sidebar/Type/SidebarItemInterface.php",
+            "src/Infrastructure/Shared/Symfony/Twig/Sidebar/Type/SidebarLink.php",
+            "src/Infrastructure/Shared/Symfony/Twig/UI/MainSidebar.php"
+        ]
+    },
+    "symfony/uid": {
+        "version": "6.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "6.2",
+            "ref": "d294ad4add3e15d7eb1bae0221588ca89b38e558"
+        },
+        "files": [
+            "config/packages/uid.yaml"
+        ]
+    },
+    "symfony/ux-autocomplete": {
+        "version": "2.7",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "2.6",
+            "ref": "07d9602b7231ba355f484305d6cea58310c01741"
+        },
+        "files": [
+            "config/routes/ux_autocomplete.yaml"
+        ]
+    },
+    "symfony/ux-chartjs": {
+        "version": "v2.7.1"
+    },
+    "symfony/ux-cropperjs": {
+        "version": "v2.7.1"
+    },
+    "symfony/ux-dropzone": {
+        "version": "v2.7.1"
+    },
+    "symfony/ux-turbo": {
+        "version": "v2.7.1"
+    },
+    "symfony/validator": {
+        "version": "6.2",
+        "recipe": {
+            "repo": "github.com/devscast/symfony-repices",
+            "branch": "main",
+            "version": "5.3",
+            "ref": "f04205f67a65658ec9f1c9dc527966aa6a35b2d1"
+        },
+        "files": [
+            "config/packages/validator.yaml",
+            "src/Infrastructure/Shared/Validation/Mapping/.gitignore"
+        ]
+    },
+    "symfony/web-profiler-bundle": {
+        "version": "6.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "6.1",
+            "ref": "e42b3f0177df239add25373083a564e5ead4e13a"
+        },
+        "files": [
+            "config/packages/web_profiler.yaml",
+            "config/routes/web_profiler.yaml"
+        ]
+    },
+    "symfony/webpack-encore-bundle": {
+        "version": "1.16",
+        "recipe": {
+            "repo": "github.com/devscast/symfony-repices",
+            "branch": "main",
+            "version": "1.10",
+            "ref": "a6564cd9ef000a2f839f5bab51b21ac2d2fe9ec0"
+        },
+        "files": [
+            "assets/admin/fonts/DMSans-Bold.eot",
+            "assets/admin/fonts/DMSans-Bold.ttf",
+            "assets/admin/fonts/DMSans-Bold.woff",
+            "assets/admin/fonts/DMSans-Bold.woff2",
+            "assets/admin/fonts/DMSans-Medium.eot",
+            "assets/admin/fonts/DMSans-Medium.ttf",
+            "assets/admin/fonts/DMSans-Medium.woff",
+            "assets/admin/fonts/DMSans-Medium.woff2",
+            "assets/admin/fonts/DMSans-Regular.eot",
+            "assets/admin/fonts/DMSans-Regular.ttf",
+            "assets/admin/fonts/DMSans-Regular.woff",
+            "assets/admin/fonts/DMSans-Regular.woff2",
+            "assets/admin/fonts/Nioicon.eot",
+            "assets/admin/fonts/Nioicon.svg",
+            "assets/admin/fonts/Nioicon.ttf",
+            "assets/admin/fonts/Nioicon.woff",
+            "assets/admin/fonts/summernote.eot",
+            "assets/admin/fonts/summernote.ttf",
+            "assets/admin/fonts/summernote.woff",
+            "assets/admin/fonts/summernote.woff2",
+            "assets/admin/fonts/tinymce-mobile.woff",
+            "assets/admin/images/upload.svg",
+            "assets/admin/index.js",
+            "assets/admin/js/bootstrap.js",
+            "assets/admin/js/controllers/modal-form_controller.js",
+            "assets/admin/js/elements/ActionButton.js",
+            "assets/admin/js/elements/DeleteButton.js",
+            "assets/admin/js/elements/InputAttachment.js",
+            "assets/admin/scss/app.scss",
+            "assets/admin/scss/attachment.scss",
+            "assets/admin/scss/dashlite.css",
+            "assets/admin/scss/dashlite.min.css",
+            "assets/admin/scss/skins/theme-green.css",
+            "assets/app/index.js",
+            "assets/app/js/bootstrap.js",
+            "assets/app/js/sw.js",
+            "assets/app/scss/app.scss",
+            "assets/shared/controllers.json",
+            "assets/shared/js/components/Loader.jsx",
+            "assets/shared/js/elements/AutogrowTextarea.js",
+            "assets/shared/js/elements/Choices.js",
+            "assets/shared/js/elements/DatePicker.js",
+            "assets/shared/js/elements/EditorTextarea.js",
+            "assets/shared/js/elements/LoaderOverlay.js",
+            "assets/shared/js/elements/ModalDialog.js",
+            "assets/shared/js/elements/Skeleton.js",
+            "assets/shared/js/elements/SpinningDots.js",
+            "assets/shared/js/elements/Switch.js",
+            "assets/shared/js/elements/SyntaxCode.js",
+            "assets/shared/js/elements/TimeAgo.js",
+            "assets/shared/js/elements/Toast.js",
+            "assets/shared/js/libs/CodeMirror.js",
+            "assets/shared/js/libs/CodeMirrorMarkdown.js",
+            "assets/shared/js/utils/alert.js",
+            "assets/shared/js/utils/animation.js",
+            "assets/shared/js/utils/api.js",
+            "assets/shared/js/utils/auth.js",
+            "assets/shared/js/utils/axios.js",
+            "assets/shared/js/utils/dom.js",
+            "assets/shared/js/utils/highlightjs.js",
+            "assets/shared/js/utils/hooks.js",
+            "assets/shared/js/utils/size.js",
+            "assets/shared/js/utils/string.js",
+            "assets/shared/js/utils/timers.js",
+            "assets/shared/js/utils/url.js",
+            "assets/shared/js/utils/window.js",
+            "config/packages/webpack_encore.yaml",
+            "package.json",
+            "webpack.config.js",
+            "tailwind.config.js",
+            "postcss.config.js"
+        ]
+    },
+    "theofidry/alice-data-fixtures": {
+        "version": "1.6",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "1.0",
+            "ref": "fe5a50faf580eb58f08ada2abe8afbd2d4941e05"
+        }
+    },
+    "twig/extra-bundle": {
+        "version": "v3.5.0"
+    },
+    "vich/uploader-bundle": {
+        "version": "1.21",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "1.13",
+            "ref": "1b3064c2f6b255c2bc2f56461aaeb76b11e07e36"
+        },
+        "files": [
+            "config/packages/vich_uploader.yaml"
+        ]
+    }
+}

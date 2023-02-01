@@ -1,0 +1,47 @@
+{% extends '@admin/shared/layout/base.html.twig' %}
+{% block title 'Mes feedbacks' %}
+
+{% block header %}
+    {% embed '@admin/shared/component/_header.html.twig' %}
+        {% block header_title 'Mes feedbacks' %}
+        {% block header_action_list %}
+            <li>
+                <a href="{{ path('feedback_new') }}" class="btn btn-white btn-dim btn-outline-light">
+                    {{ 'plus' | icon }}
+                    <span>Ajouter un feedback</span>
+                </a>
+            </li>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}
+
+{% block content %}
+    {% if data | length > 0 %}
+        <div class="row g-gs">
+            {% for feedback in data %}
+                <div class="col-sm-6 col-lg-4 col-xxl-3">
+                    {% include '@app/shared/_feedback_card.html.twig' with {feedback: feedback} %}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="mt-5 d-flex justify-content-center">
+            {% if data is defined %}
+                {{ knp_pagination_render(data) }}
+            {% endif %}
+        </div>
+    {% else %}
+        <div class="card card-stretch">
+            <div class="card-body">
+                <div class="d-flex justify-content-center align-center">
+                    <div class="nk-block-content nk-error-ld text-center">
+                        <img src="{{ asset('images/feedback.svg') }}" alt="aucune données" width="200">
+                        <p class="nk-error-description">Vous n'avez aucun feedback</p>
+                        <a href="{{ path('feedback_new') }}" class="btn btn-primary">
+                            Ajouter un feedback
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

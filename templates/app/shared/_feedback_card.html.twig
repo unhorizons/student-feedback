@@ -1,0 +1,36 @@
+{% import '@admin/shared/component/_macros.html.twig' as _ %}
+
+<div class="card h-100">
+    <div class="card-inner">
+        <div class="project">
+            <div class="project-head">
+                <a href="{{ path('feedback_show', {id: feedback.id}) }}" class="project-title">
+                    <div class="project-info">
+                        <h6 class="title">donné le {{ feedback.createdAt | date('d M Y') }}</h6>
+                    </div>
+                </a>
+            </div>
+            <div class="project-details">
+                <p>{{ feedback.content | u.truncate(150, '...') }}</p>
+            </div>
+            <div class="project-meta">
+                {% if feedback.isRead %}
+                    <span class="badge bg-primary">feedback lu</span>
+                {% endif %}
+                <span class="badge bg-secondary">{{ feedback.responseCount}} réponse</span>
+                <div>
+                    <a href="{{ path('feedback_show', {id: feedback.id}) }}" class="text-soft btn btn-icon btn-trigger">
+                        {{ 'eye' | icon }}
+                    </a>
+                    {% if not feedback.isRead %}
+                        <a href="{{ path('feedback_edit', {id: feedback.id}) }}" class="text-soft btn btn-icon btn-trigger">
+                            {{ 'edit' | icon }}
+                        </a>
+                        {{ _.delete_icon_button('feedback_delete', feedback, 'feedback_index') }}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

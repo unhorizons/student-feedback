@@ -1,0 +1,19 @@
+{% extends '@admin/shared/layout/base.html.twig' %}
+{% block title 'Statistiques' %}
+
+{% block header %}
+    {% embed '@admin/shared/component/_header.html.twig' %}
+        {% block header_title 'Statistiques' %}
+        {% block header_action_list %}
+            <li>
+                <a href="{{ path('administration_feedback_index') }}" class="btn btn-white btn-dim btn-outline-light">
+                    {{ 'comments' | icon }}
+                    <span>Feedbacks</span>
+                </a>
+            </li>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}
+
+{% block content %}
+{% endblock %}

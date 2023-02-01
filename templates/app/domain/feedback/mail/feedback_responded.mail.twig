@@ -1,0 +1,12 @@
+{% extends _layout %}
+{% import '@app/shared/layout/mail/macro.html.twig' as e %}
+
+{% block body %}
+    {% apply markdown_email %}
+        # Hey {{ user.email }},
+
+        votre feedback du {{ event.feedback.createdAt | date('d M Y') }} a reçu une réponse
+
+        > {{ event.response.content }}
+    {% endapply %}
+{% endblock %}

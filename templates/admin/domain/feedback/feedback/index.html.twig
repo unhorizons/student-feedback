@@ -1,0 +1,50 @@
+{% extends '@admin/shared/layout/base.html.twig' %}
+{% block title 'Gestion feedbacks' %}
+
+{% block header %}
+    {% embed '@admin/shared/component/_header.html.twig' %}
+        {% block header_title 'Gestion feedbacks' %}
+        {% block header_action_list %}
+            <li>
+                <a href="{{ path('administration_feedback_dashboard') }}" class="btn btn-white btn-dim btn-outline-light">
+                    {{ 'growth-fill' | icon }}
+                    <span>Statistiques</span>
+                </a>
+            </li>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}
+
+{% block content %}
+    {% embed "@admin/shared/component/card/_list.html.twig" %}
+        {% block list_card_table_head %}
+            <th>#</th>
+            <th>Feedback</th>
+            <th>Auteur</th>
+            <th>Lu</th>
+            <th>Réponses</th>
+            <th>Date</th>
+            <th>&nbsp;</th>
+        {% endblock %}
+        {% block list_card_table_body %}
+            {% for row in data %}
+                <tr>
+                    <td>{{ row.id }}</td>
+                    <td>{{ row.content | u.truncate(30, '...') }}</td>
+                    <td>{{ row.isAnonymous ? 'Anonyme' : row.owner.email }}</td>
+                    <td>{{ row.isRead | boolean }}</td>
+                    <td><strong>{{ row.responseCount }}</strong></td>
+                    <td>{{ row.createdAt | date('d M Y') }}</td>
+                    <td class="tb-odr-action">
+                        <div class="tb-odr-btns d-none d-md-inline">
+                            <a href="{{ path('administration_feedback_show', {id: row.id}) }}" class="btn btn-sm btn-primary" title="{{ 'global.show' | trans([], 'messages') }}">
+                                {{ 'eye-alt-fill' | icon }}
+                                <span>{{ 'global.show' | trans([], 'messages') }}</span>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

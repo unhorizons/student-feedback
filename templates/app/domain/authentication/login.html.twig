@@ -1,0 +1,15 @@
+{% extends '@app/shared/layout/authentication.html.twig' %}
+{% block title 'Connexion' %}
+
+{% block body %}
+    <div class="nk-block-head">
+        <div class="nk-block-head-content">
+            <h5 class="nk-block-title fw-bolder">Connexion - UNH Feedbacks</h5>
+            <div class="nk-block-des"><p>Bon retour parmi nous, connectez-vous pour continuer !</p></div>
+        </div>
+    </div>
+    {{ form_start(form) }}
+        {{ form_row(form.email) }}
+        <button class="btn btn-lg btn-primary btn-block">Se connecter</button>
+    {{ form_end(form) }}
+{% endblock %}
