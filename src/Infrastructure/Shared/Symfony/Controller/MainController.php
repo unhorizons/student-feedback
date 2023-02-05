@@ -18,6 +18,10 @@ final class MainController extends AbstractController
     public function __invoke(): Response
     {
         if (null !== $this->getUser()) {
+            if ($this->isGranted('ROLE_ADMIN')) {
+                return $this->redirectToRoute('administration_feedback_dashboard');
+            }
+
             return $this->redirectToRoute('feedback_new');
         }
 

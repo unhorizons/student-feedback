@@ -27,7 +27,25 @@ final class FeedbackController extends AbstractCrudController
     #[Route('', name: 'index', methods: ['GET'])]
     public function index(FeedbackRepository $repository): Response
     {
-        return $this->queryIndex($repository);
+        $is_read = $this->request->query->get('is_read', null);
+
+        return $this->render(
+            view: $this->getViewPath('index'),
+            parameters: [
+                'data' => $this->paginator->paginate(
+                    target: $repository->findBy(
+                        criteria: null !== $is_read ? [
+                            'is_read' => $is_read,
+                        ] : [],
+                        orderBy: [
+                            'created_at' => 'DESC',
+                        ]
+                    ),
+                    page: $this->request->query->getInt('page', 1),
+                    limit: 50
+                ),
+            ]
+        );
     }
 
     #[Route("/{id<\d+>}", name: 'show', methods: ['GET'])]

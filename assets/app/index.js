@@ -13,9 +13,9 @@ import {installServiceWorker} from "../shared/js/utils/alert";
 customElements.define('app-toast', Toast)
 
 if ("serviceWorker" in navigator) {
-    window.addEventListener("load", async () => {
+    window.addEventListener("load", async() => {
         const wb = new Workbox('/sw.js', {scope: '/'})
-        const showSkipWaitingPrompt = async () => {
+        const showSkipWaitingPrompt = async() => {
             await installServiceWorker(() => {
                 wb.addEventListener('controlling', (event) => {
                     window.location.reload()

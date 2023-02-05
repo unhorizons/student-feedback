@@ -14,5 +14,9 @@ use Domain\Shared\Repository\DataRepositoryInterface;
  */
 interface FeedbackRepositoryInterface extends DataRepositoryInterface
 {
+    public function findStats(): array;
+
+    public function findCurrentYearFrequency(): array;
+
     public function monthlyFeedbackLimitReached(User $owner, int $limit = 1): bool;
 }

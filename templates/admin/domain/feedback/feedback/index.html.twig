@@ -5,7 +5,15 @@
     {% embed '@admin/shared/component/_header.html.twig' %}
         {% block header_title 'Gestion feedbacks' %}
         {% block header_action_list %}
-            <li>
+            <li class="btn-group">
+                <a href="{{ path('administration_feedback_index', {is_read: 1}) }}" class="btn btn-white btn-dim btn-outline-light">
+                    {{ 'comments' | icon }}
+                    <span>Feedbacks lus</span>
+                </a>
+                <a href="{{ path('administration_feedback_index', {is_read: 0}) }}" class="btn btn-white btn-dim btn-outline-light">
+                    {{ 'comments' | icon }}
+                    <span>Feedback non lus</span>
+                </a>
                 <a href="{{ path('administration_feedback_dashboard') }}" class="btn btn-white btn-dim btn-outline-light">
                     {{ 'growth-fill' | icon }}
                     <span>Statistiques</span>

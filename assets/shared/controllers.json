@@ -1,39 +1,45 @@
 {
-  "controllers": {
-    "@symfony/ux-cropperjs": {
-      "cropper": {
-        "fetch": "eager",
-        "enabled": true,
-        "autoimport": {
-          "cropperjs/dist/cropper.min.css": true,
-          "@symfony/ux-cropperjs/src/style.css": true
+    "controllers": {
+        "@symfony/ux-chartjs": {
+            "chart": {
+                "enabled": true,
+                "fetch": "lazy"
+            }
+        },
+        "@symfony/ux-cropperjs": {
+            "cropper": {
+                "fetch": "lazy",
+                "enabled": true,
+                "autoimport": {
+                    "cropperjs/dist/cropper.min.css": true,
+                    "@symfony/ux-cropperjs/src/style.css": true
+                }
+            }
+        },
+        "@symfony/ux-autocomplete": {
+            "autocomplete": {
+                "enabled": true,
+                "fetch": "lazy",
+                "autoimport": {
+                    "tom-select/dist/css/tom-select.default.css": true
+                }
+            }
+        },
+        "@symfony/ux-turbo": {
+            "turbo-core": {
+                "enabled": true,
+                "fetch": "eager"
+            }
+        },
+        "@symfony/ux-dropzone": {
+            "dropzone": {
+                "enabled": true,
+                "fetch": "lazy",
+                "autoimport": {
+                    "@symfony/ux-dropzone/src/style.css": true
+                }
+            }
         }
-      }
     },
-    "@symfony/ux-autocomplete": {
-      "autocomplete": {
-        "enabled": true,
-        "fetch": "lazy",
-        "autoimport": {
-          "tom-select/dist/css/tom-select.default.css": true
-        }
-      }
-    },
-    "@symfony/ux-turbo": {
-      "turbo-core": {
-        "enabled": true,
-        "fetch": "eager"
-      }
-    },
-    "@symfony/ux-dropzone": {
-      "dropzone": {
-        "enabled": true,
-        "fetch": "lazy",
-        "autoimport": {
-          "@symfony/ux-dropzone/src/style.css": true
-        }
-      }
-    }
-  },
-  "entrypoints": []
+    "entrypoints": []
 }

@@ -1,3 +1,5 @@
 authentication.forms.helps.email: Renseignez votre address email et vous recevrez un lien de connexion unique
 authentication.forms.labels.email: Adresse Email
 authentication.forms.labels.placeholders.email: nom@unhorizons.org...
+
+authentication.mails.subjects.login_link_requested: Lien de connexion unique UNH Feedback

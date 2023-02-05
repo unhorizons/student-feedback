@@ -1,19 +1,52 @@
 {% extends '@admin/shared/layout/base.html.twig' %}
-{% block title 'Statistiques' %}
+{% block title 'Tableau de bord' %}
 
 {% block header %}
-    {% embed '@admin/shared/component/_header.html.twig' %}
-        {% block header_title 'Statistiques' %}
+    {% embed "@admin/shared/component/_header.html.twig" %}
+        {% block header_title  'Statistique' %}
         {% block header_action_list %}
             <li>
-                <a href="{{ path('administration_feedback_index') }}" class="btn btn-white btn-dim btn-outline-light">
-                    {{ 'comments' | icon }}
-                    <span>Feedbacks</span>
+                <a href="{{ path('administration_feedback_index') }}" class="btn btn-white btn-dim btn-outline-light" aria-label="{{ 'global.back' | trans([], 'messages') }}" title="{{ 'global.back' | trans([], 'messages') }}">
+                    {{ 'folder-list' | icon }}
+                    <span>Tous les feedbacks</span>
                 </a>
             </li>
+            {#<li>
+                <a href="" class="btn btn-white btn-dim btn-outline-light" aria-label="recherche" title="recherche">
+                    {{ 'search' | icon }}
+                    <span>Recherche</span>
+                </a>
+            </li>#}
         {% endblock %}
     {% endembed %}
 {% endblock %}
 
 {% block content %}
+    {% import '@admin/shared/component/_macros.html.twig' as _ %}
+    <div class="row g-gs">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-title-group align-start mb-2">
+                        <div class="card-title">
+                            <p>Feedbacks reçus les 30 derniers jours</p>
+                        </div>
+                        <div class="card-tools"></div>
+                    </div>
+                    <div class="align-start gy-3 gx-5 flex-wrap">
+                        <div class="nk-sale-data-group g-4">
+                            <div class="nk-sale-data">
+                                <span class="amount">
+                                    {{ data.feedbacks_current_month}}
+                                    {{ _.ratio(data.feedbacks_month_ratio) }}
+                                </span>
+                                <span class="sub-title">Feedbacks du Mois</span>
+                            </div>
+                        </div>
+                    </div>
+                    {{ render_chart(chart) }}
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
